@@ -80,21 +80,25 @@ exports.handler = function(event, context) {
         var params = {
           sic: stock.sic
         };
-        rest.get(peers_url + "?sic=" + stock.sic)
-        .on('success', function(data, response){
-          if (data.length === 0) {
-            console.log("Zero peers for:");
-            console.log(stock);
-            console.log(data);
-          } else {
-            // console.log('Checked: ' + stock.sic);
-          }
-          resolve();
-        })
-        .on('fail', function(data, response){
-          console.log(data)
-          reject('Error getting peers');
-        });
+        var call = function(){
+          rest.get(peers_url + "?sic=" + stock.sic)
+          .on('success', function(data, response){
+            if (data.length === 0) {
+              console.log("Zero peers for:");
+              console.log(stock);
+              console.log(data);
+            } else {
+              console.log('Checked: ' + stock.sic);
+            }
+            resolve();
+          })
+          .on('fail', function(data, response){
+            console.log('Error getting peers');
+            call();
+          });
+        };
+        call();
+
       });
     }, 0);
   }, 1)
