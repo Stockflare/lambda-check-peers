@@ -1,0 +1,9 @@
+{
+  "identities": [],
+  "region": "us-east-1",
+  "search_url": "http://search.internal-stockflare.com/filter",
+  "peers_url": "http://peers.internal-stockflare.com",
+  "search_body": {
+    "conditions": { "sic": ">0" }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "identities": [],
+  "region": "us-east-1",
+  "search_url": "http://search.internal-stocktio.com/filter",
+  "peers_url": "http://peers.internal-stocktio.com",
+  "search_body": {
+    "conditions": { "sic": ">0" }
+  }
+}

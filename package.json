@@ -1,0 +1,21 @@
+{
+  "name": "lambda-check-peers",
+  "description": "Lambda function to set user alert email preferences",
+  "version": "0.0.1",
+  "private": "true",
+  "dependencies": {
+    "aws-sdk": "^2.1.40",
+    "lodash": "^4.8.2",
+    "moment": "^2.10.6",
+    "restler": "^3.4.0",
+    "underscore": "^1.8.3",
+    "when": "^3.7.4"
+  },
+  "devDependencies": {
+    "grunt": "0.4.*",
+    "grunt-pack": "0.1.*",
+    "grunt-aws-lambda": "0.7.*",
+    "npm": "^2.2.0"
+  },
+  "bundledDependencies": []
+}
